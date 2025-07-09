@@ -1,1 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To Do リスト</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icons/icon-192.png" />
+  <meta name="theme-color" content="#ffffff" />
+</head>
+<body>
+  <div class="container">
+    <h1>To Do リスト</h1>
+    <div class="input-area">
+      <input type="text" id="taskInput" placeholder="タスクを入力してください" />
+      <button onclick="addTask()">追加</button>
+    </div>
+    <ul id="taskList"></ul>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js')
+        .then(reg => console.log('Service Worker registered ✅'))
+        .catch(err => console.error('Service Worker registration failed ❌', err));
+    }
+  </script>
+</body>
+</html>
 
